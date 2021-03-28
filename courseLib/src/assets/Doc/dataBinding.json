@@ -1,0 +1,4 @@
+{
+      "id": "Data_Binding",
+      "contents": "\n <h2>Data Binding</h2><div class=\"concept-wrapper\">\n     <div class=\"row pt-1\">\n     <div class=\"col-md-2 text-right concept-name\">\n      <h4> One Way</h4>\n     </div>\n     <div class=\"col-md-10 concept-def\">\n       <b>Defination:</b>\n       <br>\n       <p>\n         This is one-way data binding \n       </p>\n     </div>\n     </div></div><div class=\"concept-points\">\n    <blockquote> <ul><li>this data binding work only in one way </li></ul><ul><li>we can use reg ex for data binding</li></ul> </blockquote>\n    </div><h4>Syntax For Reg Ex Is</h4>\n       <code-view>\n         {{ varName  }}\n       </code-view>\n       <p>With the help of this binding, we can add values to the template in angular;r</p>"
+    }

@@ -1,0 +1,6 @@
+{ "id":"This is test comp 2", "contents":"
+ <h4>This is test comp 2</h4><p>the test tests are tests.  This can be tested on the system to be plotted. </p><ul id="infoList0"><li>Note 1</li><li>Note 2</li><li>Note 3</li></ul><div><code-view>{
+  "note" : "Note 2",
+  "Id":"Id 2",
+  "Name": "name 3"
+ }</code-view></div>" }

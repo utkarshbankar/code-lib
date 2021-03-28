@@ -1,0 +1,334 @@
+ <div class="doc-temp-wrapper">
+<!-- <form  [formGroup]="profileForm" (ngSubmit)="saveData()">
+  <div class="form-group">
+    <label for="def">Defination</label>
+    <h4>Defination</h4>
+    <textarea type="text" class="form-control" id="def" formControlName="docDef" required minlength="5"> 
+    </textarea>    -->
+	<!-- <button (click)="updateName()">update</button> -->
+<!-- <div *ngIf="profileForm.controls.firstName.hasError('required')" >
+			<span class="text-danger mt-3">first name is required.</span>
+	</div>
+	<div *ngIf="profileForm.firstName?.errors?.minlength" >
+			<span class="text-danger mt-3">minlength is 5 .</span>
+	</div>
+	 ->
+  </div>
+  <div formArrayName="skills">
+  <h4>Info List</h4> 
+  <button type="button" (click)="addSkills()">Add skills</button>
+  <button type="button" (click)="deleteSkills()">delete skills</button>
+
+  <div class="container" *ngFor="let skill of skills.controls; let i=index">
+    <!-- The repeated alias template ->
+    <label>    Info point {{i}}:   </label>
+    <input class="form-control" type="text" [formControlName]="i">
+  </div>
+</div>
+<div class="form-group">
+    <label for="code">Code:</label>
+    <textarea type="text" id="code" class="form-control" formControlName="lastName" required >
+    </textarea>    
+</div>
+  <!-- <div class="form-group form-check">
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox"> Remember me
+    </label>
+  </div> -->
+<!-- <div formGroupName="address">
+  <h3>Address</h3>
+
+  <label>
+    Street:
+    <input type="text" formControlName="street"><button (click)="updateName()">update</button>
+  </label>
+
+  <label>
+    City:
+    <input type="text" formControlName="city">
+  </label>
+  
+  <label>
+    State:
+    <input type="text" formControlName="state">
+  </label>
+
+  <label>
+    Zip Code:
+    <input type="text" formControlName="zip">
+  </label> 
+</div>-->
+<!--   
+<div formArrayName="skills">
+  <h3>skills</h3> 
+  <button (click)="addSkills()">Add skills</button>
+  <button (click)="deleteSkills()">delete skills</button>
+
+  <div *ngFor="let skill of skills.controls; let i=index">
+    <!-- The repeated alias template ->
+    <label>
+      skill:
+      <input type="text" [formControlName]="i">
+    </label>
+  </div>
+</div>  ->
+  
+  <button type="submit" class="btn btn-primary" >Submit</button>
+</form>
+</div> -->
+
+<div class="doc-wrapper mt-5">
+  <div class="alert alert-info">
+    <textarea class="form-control" type="text" #elmTextInput (keyup)="elementTextContent(elmTextInput.value)" placeholder="Enter Element Content That you want to create"
+      rows="5">
+  </textarea>
+    <span *ngIf="(elmTextErrorMsg != '')"> {{ elmTextErrorMsg }}</span>
+  </div>
+  <div class="row pl-3 pr-3">
+    <button type="button" class="btn btn-outline-primary btn-sm text-center col-md-2" [disabled]="(elmTextErrorMsg != '')" (click)="createElm('p')">Paragraph</button>
+    <button type="button" class="btn btn-outline-primary btn-sm text-center col-md-2" [disabled]="(elmTextErrorMsg != '')" (click)="createElm('h4')">Heading</button>
+    <button type="button" class="btn btn-outline-primary btn-sm text-center col-md-2" [disabled]="(elmTextErrorMsg != '')" (click)="createInfoListPoint('li')">Note</button>
+    <button type="button" class="btn btn-outline-primary btn-sm text-center col-md-2" [disabled]="(elmTextErrorMsg != '')" (click)="createCodeTemp()">Code</button>
+    <button class="btn btn-primary" (click)="saveTemplate()">Save Template</button>
+    <button class="btn btn-warning" (click)="clearTemplate()">Remove Template</button>
+  </div>
+
+  
+
+</div> 
+
+<!-- Button trigger modal -->
+<!-- <div class=" jumbotron">
+<h1 class="display-4" >Create Notes Document</h1>
+<p class="lead">To create document click on one of the following button as per your requirment.</p>  
+ <hr class="my-4">
+<button type="button" class="btn btn-primary mr-3" data-toggle="modal" data-target="#definationModal">  Defination </button>
+<button type="button" class="btn btn-secondary mr-3" data-toggle="modal" data-target="#infoPointsModal">  Info Points </button>
+<button type="button" class="btn btn-warning mr-3" data-toggle="modal" data-target="#codeBlockModal">  Code Block </button>
+<button type="button" class="btn btn-info mr-3" data-toggle="modal" data-target="#headingModal">  Heading </button>
+<button type="button" class="btn btn-info mr-3" data-toggle="modal" data-target="#paraModal">  Paragraph </button>
+ <hr class="my-4">
+<button class="btn btn-primary mr-3" (click)="saveTemplate()">Save Template</button>
+<button class="btn btn-warning" (click)="clearTemplate()">Remove Template</button>
+</div> -->
+<!--Defination Modal -->
+<!-- <div class="modal fade" id="definationModal" tabindex="-1" role="dialog" aria-labelledby="definationModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="definationModalLabel"> Defination Template </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!--The Def Temp creation div start--
+        <form  #defTempForm="ngForm" (ngSubmit)="saveDefTemp(defTempForm.value)">
+          <div class="form-group row">
+            <label for="defConcept" class="col-sm-2 col-form-label text-right">Concept</label>
+            <div class="col-sm-10">
+              <input type="text" 
+              class="form-control" 
+              id="defConcept"
+              required
+              [(ngModel)]="defTempObj.defConcept" 
+              name="defConcept" 
+              #defConcept = "ngModel"
+              placeholder="Concept Name" >
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="defDescription" class="col-sm-2 col-form-label text-right">Define</label>
+            <div class="col-sm-10">
+              <textarea class="form-control" 
+              id="defDescription" 
+              required
+              [(ngModel)]="defTempObj.defDescription"
+              name="defDescription" 
+              #defDescription = "ngModel"
+              placeholder="Defination"></textarea>
+            </div>
+          </div>
+         <!--The Def Temp creation div end--
+     
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary btn-sm" 
+         (click)="defTempForm.reset()" >clear</button>
+        <button type="submit" class="btn btn-outline-primary btn-sm" [disabled]="!defTempForm.form.valid" >Add Defination component</button>
+      </div>
+      </form>
+     </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- InfoPoints Modal-->
+
+<!-- <div class="modal fade" id="infoPointsModal" tabindex="-1" role="dialog" aria-labelledby="definationModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="definationModalLabel"> InfoPoints Template </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body"> -->
+        <!--The Def Temp creation div start-->
+<!--         
+        <div class="form-group row">
+            <div class="col-sm-10">
+              <input type="text" 
+              class="form-control" 
+              (keyup)="checkinfoPointIsAdded()"
+              placeholder="Add Info Point" 
+              #infoPointToAdd>
+            </div>
+            <div class="col-sm-2">
+              <button type="button" 
+                      class="btn btn-outline-secondary btn-sm"
+                      (click)="addAnotherInfoPpoint()"
+                      [disabled]="(infoPointIsAdded == '')">
+              Add List Item
+              </button>
+            </div>
+        </div>
+        <div class="alert alert-info" id="infoPointDisaplyList">
+
+        </div> -->
+         <!--The Def Temp creation div end-->
+      <!-- </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary btn-sm" 
+         (click)="clearInfoList()" >clear</button>
+        <button type="submit" class="btn btn-outline-primary btn-sm" 
+        (click)="saveInfoPoints()"
+        [disabled]="" >Add InfoPoints Template</button>
+      </div>
+    
+    </div>
+  </div>
+</div> -->
+
+<!--Code Modal start-->
+<!-- <div class="modal fade" id="codeBlockModal" tabindex="-1" role="dialog" aria-labelledby="definationModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="codeBlockModalLabel"> InfoPoints Template </h5>
+        <button type="button" class="close" data-dismiss="mo  dal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body"> -->
+        <!--The Def Temp creation div start-->
+<!--         
+        <div class="form-group row">
+            <div class="col-sm-12">
+              <textarea type="text" 
+              class="form-control" 
+              (keyup)="saveCodeBlock()"
+              placeholder="Add code " 
+              #codeBlock></textarea>
+            </div>
+        </div> -->
+         <!--The Def Temp creation div end-->
+      <!-- </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary btn-sm" 
+        (click)="clearCodeBlock()" >clear</button>
+        <button type="submit" class="btn btn-outline-primary btn-sm" 
+        (click)="saveCodeBlock('param')"
+        [disabled]="( codeBlockStr == '')" 
+        >Save Code Block</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!--Code Modal end-->
+
+<!--Heading Modal start-->
+<!-- <div class="modal fade" id="headingModal" tabindex="-1" role="dialog" aria-labelledby="headingModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="headingModalLabel"> Heading Template </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body"> -->
+        <!--The Def Temp creation div start-->
+        
+        <!-- <div class="form-group row">
+          <div class="col-sm-3" >
+          <select class="form-control"          
+          #selectedheading 
+          (change)="headingToAdd(selectedheading.value)">
+            <option value=" " >Select Heading</option>
+            <option value="h2" >Heading </option>
+            <option value="h4">Sub Heading </option>
+          </select>
+        </div> 
+          <div class="col-sm-9">
+              <textarea type="text" 
+              class="form-control" 
+              (keyup)="saveHeading()"
+              placeholder="Add Heading " 
+              #headingTemp ></textarea>
+            </div>
+        </div> -->
+         <!--The Def Temp creation div end-->
+      <!-- </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary btn-sm" 
+        (click)="clearHeading()" >clear</button>
+        <button type="submit" class="btn btn-outline-primary btn-sm" 
+        (click)="saveHeading(headingTemp.value)"
+        [disabled]="(headingTemp.value =='')" 
+        
+        >Save Heading</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!--Heading Modal end-->
+
+<!--Paragraph Modal start-->
+<!-- <div class="modal fade" id="paraModal" tabindex="-1" role="dialog" aria-labelledby="paraModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="paraModalLabel"> Paragraph </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body"> -->
+        <!--The para div start-->
+        <!-- <div class="form-group row">
+            <div class="col-sm-12">
+              <textarea type="text" 
+              class="form-control" 
+              (keyup)="savePara()"
+              placeholder="Add Your Explaination " 
+              #paraBlock></textarea>
+            </div>
+        </div> -->
+        <!--The para div end-->
+      <!-- </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary btn-sm" 
+        (click)="clearHeading()">clear</button>
+        <button type="submit" class="btn btn-outline-primary btn-sm" 
+        (click)="savePara(paraBlock.value)"
+        [disabled]="(paraBlock.value =='')"        
+        >Save Paragraph</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!--paragraph Modal end-->
+<div id="contentElm">
+
+</div>

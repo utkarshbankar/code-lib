@@ -1,0 +1,67 @@
+<form [formGroup]="tempFormData" (ngSubmit)="saveProgramTemplate()">
+    <fieldset>
+        <legend class="text-center">Write A Program Form</legend>
+        <div class="form-group row">
+            <label for="exampleFormControlSelect1" class="col-sm-2 col-form-label">Subject </label>
+            <div class="col-sm-10">
+                <select class="form-control" 
+                        id="exampleFormControlSelect1"
+                        formControlName="fapTempSubject">
+                    <option>JavaScript</option>
+                    <option>ECMAScript6</option>
+                    <option>Angular</option>
+                    <option>NodeJS</option>
+                    <option>Python</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputQuestionTopic" class="col-sm-2 col-form-label">Topic</label>
+            <div class="col-sm-10">
+                <input type="text" 
+                        class="form-control" 
+                        id="inputQuestionTopic" 
+                        placeholder="Topic"
+                        formControlName="fapTempTopic">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputQuestion" class="col-sm-2 col-form-label">Question</label>
+            <div class="col-sm-10">
+                <input type="text" 
+                        class="form-control" 
+                        id="inputQuestion" 
+                        placeholder="Write a program"
+                        formControlName="fapTempQue">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="exampleFormControlTextarea1" class="col-sm-2 col-form-label">Code</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" 
+                            id="exampleFormControlTextarea1" 
+                            rows="6"
+                            formControlName="fapTempCode"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="exampleFormControlTextarea2" class="col-sm-2 col-form-label">Code Explanation</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" 
+                        id="exampleFormControlTextarea2" 
+                        rows="3"
+                        formControlName="fapTempDesc"></textarea>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-6 text-right">
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+            <div class="col-sm-6 text-left">
+                <button type="button" class="btn btn-warning"
+                        (click)="tempFormData.reset()" >Clear</button>
+            </div>
+        </div>
+    </fieldset>
+</form>

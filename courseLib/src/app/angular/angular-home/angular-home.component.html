@@ -1,0 +1,31 @@
+<!-- <a routerLink="topic"> topic name</a> -->
+<!-- <a routerLink="tempCode">TempCode</a>
+<router-outlet></router-outlet> --
+<app-test-view>
+    <div [innerText]="codeTemp"></div>  
+</app-test-view>
+<!-- https://scotch.io/tutorials/angular-2-transclusion-using-ng-content --
+<app-test-view >
+  <div [innerHTML]=" stringT1"></div>
+</app-test-view>
+  <!-- <div ng-non-bindable="
+it('should update the value in the control', () =&gt; {
+  component.favoriteColorControl.setValue('Blue');
+
+  const input = fixture.nativeElement.querySelector('input');
+
+  expect(input.value).toBe('Blue');
+});
+"></div>  -->
+ <!-- <app-topic-view [doc]= "currentDoc" (docReady)="onDocReady()" (docRemoved)="onDocRemoved()" (docInserted)="onDocInserted()" (docRendered)="onDocRendered()"> -->
+<!-- <div class="row">
+  <div class="col-md-10"><h4>Hello Angular Home component</h4></div>
+ <div class="col-md-2"> <a routerLink="topicList">back</a></div>
+</div> -->
+
+<button class="btn btn-outline-primary btn-sm text-right" (click)="goToPath()"> &lt;-- </button>
+<app-topic-view [doc]= "currentDoc" >  </app-topic-view>         
+
+<!-- <app-test-view >
+  <div  >{{ codeTemp }}</div>
+</app-test-view> -->

@@ -1,0 +1,4 @@
+{
+      "id": "\n    \n      Concept Name\n    ",
+       "contents": "\n<div class=\"concept-wrapper\"> <div class=\"row pt-1\">\n     <div class=\"col-md-2 text-right concept-name\">\n      <h4> Concept Name</h4>\n     </div>\n     <div class=\"col-md-10 concept-def\">\n       <b>Defination:</b>\n       <br>\n       <p>\n         Info to handel data def and some short info balut concept\n       </p>\n     </div></div></div><div class=\"concept-points\">\n    <blockquote> <ul><li>kfhadgk</li></ul><ul><li>jbdfkbgkjg</li></ul><ul><li> dbakgbk</li></ul><ul><li>kkjjfbkbakg</li></ul> </blockquote>\n    </div><code-view> <div>@window({ abc: 'text ,\n     pqr:'text',\n     xyz:'./temp.html '\n })\n export DataCom{\n }</div></code-view>      <h4>Now Here Is Subheading</h4><p>some basic info about heading</p>"
+    }

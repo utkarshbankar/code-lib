@@ -1,0 +1,19 @@
+<div class="container">
+
+<ul class="list-group list-group-flush">
+  <li  *ngFor = "let temp of templateArr" class="list-group-item"><a [routerLink]="[ 'topic', temp.contentTitle]">{{temp.contentTitle}}</a></li>
+  <!--  <li class="list-group-item"><a [routerLink]="['topic', 'component']">component</a></li>
+  <li class="list-group-item"><a [routerLink]="['topic', 'Data Binding']">Data Binding</a></li>
+  <li class="list-group-item"><a [routerLink]="['topic', 'Event Binding']">Directive</a></li>
+ <li class="list-group-item"><a [routerLink]="['topic', {tn:'component'}]">component</a></li>
+  <li class="list-group-item"><a [routerLink]="['topic', {tn:'firstDoc'}]">firstDoc</a></li> -->
+  <li class="list-group-item">
+
+    <!-- <a  (click)="goToPath('firstDoc')" ><span>Displaying Data</span></a> -->
+      Link New
+  </li>
+  <li class="list-group-item">Porta ac consectetur ac</li>
+  <li class="list-group-item">Vestibulum at eros</li>
+</ul>
+
+</div>

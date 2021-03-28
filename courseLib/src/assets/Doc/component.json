@@ -1,0 +1,6 @@
+{
+      "id": "componentNotes",
+      "contents": "\n <h4>componentNotes</h4><p>A component is a typescript class that holds data view together. That means your view is an HTML template and the data to be displayed on a template is handled by the component.</p><ul id=\"infoList0\"><li>component are building blocks of an angular application</li><li>At least one root component must be there in the application.</li><li>The root component attch hirearchy of child component with the dom</li><li>the component have template and ts class together</li></ul><h4>importing the components in angular module</h4><div><code-view>import { Component } from '@angular/core';</code-view></div><ul id=\"infoList1\"><li>in the above code, we used a typescript module concept for importing module from other modules</li><li>The Component is a class name from the @angular/core module</li><li>@angular/core module is the part of the angular framework</li></ul><h4>adding metadata to the component </h4><div><code-view>Component({\n      \n      selector : 'unique-idefntifier',\n      templateUrl: './temp.template.html',\n      styleUrls: [ './temp/styles.css ' ]  })</code-view></div>"
+}
+
+
