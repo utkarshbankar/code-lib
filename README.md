@@ -7,3 +7,4 @@ Add steps to run the app also try to upgrade it.
 4. mongodb and express version updates are pending.
 5. lost sequence
 6. Need to start study and update or refresh code.
+7. 
