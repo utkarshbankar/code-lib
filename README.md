@@ -5,4 +5,5 @@ Add steps to run the app also try to upgrade it.
 2. Data
 3. tests
 4. build
+5. preformance 
 
