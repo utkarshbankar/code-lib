@@ -7,4 +7,5 @@ Add steps to run the app also try to upgrade it.
 4. build
 5. preformance
 6. ci cd
+7. Authentication and authorization
 
