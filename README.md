@@ -8,5 +8,5 @@ Add steps to run the app also try to upgrade it.
 5. preformance
 6. ci cd
 7. Authentication and authorization
-8. Guard.
+8. Guard
 
