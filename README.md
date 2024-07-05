@@ -13,6 +13,5 @@ Add steps to run the app also try to upgrade it.
 10. one
 11. two
 12. dynamic forms
-13. Not updated.
 
 
