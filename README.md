@@ -9,6 +9,7 @@ Add steps to run the app also try to upgrade it.
 6. ci cd
 7. Authentication and authorization
 8. Guard
-9. e2e. 
+9. e2e.
+10. 
 
 
