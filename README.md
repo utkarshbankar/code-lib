@@ -12,6 +12,5 @@ Add steps to run the app also try to upgrade it.
 9. e2e.
 10. Test.
 11. Fix for react
-12. 
 
 
